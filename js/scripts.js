@@ -15,7 +15,7 @@ function generate(){
 	}
 	calendar.insertAdjacentHTML('beforeend', '<div class="row"></div>')
 	child=document.getElementById('calendar').lastChild;
-	child.insertAdjacentHTML('beforeend', '<div class="col 2">'+monthNames[month]+"</div>");
+	child.insertAdjacentHTML('beforeend', '<div class="col-2">'+monthNames[month]+"</div>");
 	calendar.insertAdjacentHTML('beforeend', '<div class="row"></div>')
 	generateCalendar(date);
 
@@ -27,9 +27,9 @@ function generate(){
 		child=document.getElementById('calendar').lastChild;
 
 		if(day==0||day==6){
-			child.insertAdjacentHTML('beforeend', '<div class="col 2 orange lighten-4">'+dateN+"</div>");
+			child.insertAdjacentHTML('beforeend', '<div class="col-2 orange lighten-4">'+dateN+"</div>");
 		}else{
-			child.insertAdjacentHTML('beforeend', '<div class="col 2 green accent-2">'+dateN+"</div>");
+			child.insertAdjacentHTML('beforeend', '<div class="col-2 green accent-2">'+dateN+"</div>");
 		}
 
 		var d1 = document.getElementById('calendar');
@@ -43,10 +43,19 @@ function generate(){
 		tomorrow.setDate(date.getDate() + 1);
 		monthTomorrow=tomorrow.getMonth();
 		if(monthTomorrow!=month) {
+
+
+			if(day<6){
+				for(j=day;j<6;j++){
+					child=document.getElementById('calendar').lastChild;
+				child.insertAdjacentHTML('beforeend', '<div class="col-2  grey lighten-5">'+'-' +"</div>");
+				}
+
+			}
 			calendar.insertAdjacentHTML('beforeend', '<div class="row"></div>')
 
 			child=document.getElementById('calendar').lastChild;
-			child.insertAdjacentHTML('beforeend', '<div class="col 2">'+monthNames[monthTomorrow]+"</div>");
+			child.insertAdjacentHTML('beforeend', '<div class="col-2">'+monthNames[monthTomorrow]+"</div>");
 			calendar.insertAdjacentHTML('beforeend', '<div class="row"></div>')
 			generateCalendar(tomorrow);
 
@@ -63,7 +72,7 @@ function generateCalendar(date){
 	console.log(child);
 	for(i=0;i<7;i++){
 		calendar=document.getElementById('calendar');
-		child.insertAdjacentHTML('beforeend', '<div class="col 2">'+DayN[i]+"</div>");
+		child.insertAdjacentHTML('beforeend', '<div class="col-2">'+DayN[i]+"</div>");
 	}
 	calendar.insertAdjacentHTML('beforeend', '<div class="row"></div>')
 	week=(+date.getDay());
@@ -71,7 +80,7 @@ function generateCalendar(date){
 
 		for(j=0;j<week;j++){
 			child=document.getElementById('calendar').lastChild;
-		child.insertAdjacentHTML('beforeend', '<div class="col 2  grey lighten-5">'+'-' +"</div>");
+		child.insertAdjacentHTML('beforeend', '<div class="col-2  grey lighten-5">'+'-' +"</div>");
 		}
 
 	}
