@@ -20,7 +20,7 @@ function generate(){
 	generateCalendar(date);
 
 	for(i=0;i<ndays;i++){
-
+		console.log('ciclo '+i)
 		month=date.getMonth();
 		dateN=date.getDate();
 		day=date.getDay();
@@ -69,10 +69,9 @@ function generateCalendar(date){
 	const DayN = ['S','M','T','W','T','F','S'];
 
 	child=document.getElementById('calendar').lastChild;
-	console.log(child);
-	for(i=0;i<7;i++){
+	for(count=0;count<7;count++){
 		calendar=document.getElementById('calendar');
-		child.insertAdjacentHTML('beforeend', '<div class="col-2">'+DayN[i]+"</div>");
+		child.insertAdjacentHTML('beforeend', '<div class="col-2">'+DayN[count]+"</div>");
 	}
 	calendar.insertAdjacentHTML('beforeend', '<div class="row"></div>')
 	week=(+date.getDay());
