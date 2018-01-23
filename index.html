@@ -3,11 +3,41 @@
 	<title>Test Leonardo Aleman</title>
 	<link href="css/materialize.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<script type="text/javascript" src="js/scripts.js" ></script>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/materialize.js" ></script>
+
 </head>
 <body>
 	<div class="container">
-		hola
+		<div class="row">
+			<div class="input-field col s6">
+				<input  id="date" type="date" class="validate" value="2018-01-23">
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input placeholder="number of days" id="first_name" type="number" class="validate" value="1">
+				 <label for="ndays">Number of days</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input placeholder="example: US" id="first_name" type="text" class="validate">
+				 <label for="country">Country Code</label>
+			</div>
+		</div>
+
+	<a class="waves-effect waves-light btn" id="create" onClick="generate()">create</a>
+
+
 	</div>
+	<Hr>
+	<p id="demo"></p>
+
 </body>
+	<script type="text/javascript" src="js/scripts.js" ></script>
 </html>
